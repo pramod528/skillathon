@@ -1,0 +1,33 @@
+<div class="login-component">
+  <div class="row">
+    <div class="col-md-12 col-xs-12">
+      <form autocomplete="off" [formGroup]="loginForm" (ngSubmit)="signin()">
+        <div class="form-fields">
+          <div class="login">Login</div>
+          <div class="col-md-12 col-xs-12 user-group" [class.invalid]="submitted && loginForm.controls['username'].errors?.required">
+            <input type="text" formControlName="username" id="username" required>
+            <label for="username">Username</label>
+            <div class="error-msg-container">
+              Enter Valid Username.
+            </div>
+          </div>
+          <div class="col-md-12 col-xs-12 user-group mt-20" [class.invalid]="submitted && loginForm.controls['password'].errors?.required">
+            <input type="password" formControlName="password" id="password" required>
+            <label for="password">Password</label>
+            <div class="error-msg-container">
+              Enter Valid Password.
+            </div>
+          </div>
+          <div class="col-md-12 col-xs-12 align-center mt-20">
+            <button type="submit" class="blue-btn">Login</button>
+            <p class="signin-question mt-20">Don't you have account yet?</p>
+            <!-- <div [class.invalid]="!isAuthenticated">
+              <p class="error-msg-container">{{errorMessage}}</p>
+            </div> -->
+            <a  class="create-account-link" routerLink="/signup">Create Account</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

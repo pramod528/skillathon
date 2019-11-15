@@ -1,0 +1,119 @@
+
+/* You can add global styles to this file, and also import other style files */
+html {
+  font-size: 16px;
+}
+
+.login-component,
+.signup-component {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  border: 1px solid #dadce0;
+  display: block;
+  margin: 0 auto;
+  background: #fff;
+  max-width: 100%;
+  color: #202124;
+  font-weight: 400;
+  line-height: 1.3333;
+  height: auto;
+  min-height: 500px;
+  padding: 48px 40px 36px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+input {
+  outline: none;
+  border-radius: 4px;
+  margin: 1px 1px 0 1px;
+  padding: 13px 15px;
+  font-size: 16px;
+  border: 1px solid #dadce0;
+  width: 100%;
+}
+input:focus {
+  border: 2px solid #1a73e8;
+}
+label {
+  font-size: 16px;
+  position: absolute;
+  top: 0;
+  left: 15px;
+  margin: 1px 1px 0 1px;
+  padding: 13px 15px;
+  pointer-events: none;
+  transition: 0.5s;
+  font-size: 16px;
+  color: #5f6368;
+  font-weight: 400;
+}
+.user-group {
+  position: relative;
+}
+.user-group input:focus ~ label,
+.user-group input.ng-valid ~ label {
+  top: -1px;
+  padding: 0 4px;
+  margin: 0;
+  background: white;
+  line-height: 0;
+  height: 10px;
+  color: #1a73e8;
+  left: 25px;
+  z-index: 1;
+}
+
+.login {
+  font-size: 25px;
+  color: #202124;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.align-center {
+  text-align: center;
+}
+.blue-btn {
+  background: #1a73e8;
+  min-width: 88px;
+  line-height: 20px;
+  color: #fff;
+  padding: 7px 25px;
+  outline: none;
+  box-shadow: none;
+  border: 1px solid #1a73e8;
+  border-radius: 5px;
+}
+.create-account-link {
+color: #007bff;
+text-decoration: none;
+}
+.create-account-link:hover{
+  text-decoration: none;
+}
+.mt-20 {
+  margin-top: 20px;
+}
+.invalid input {
+border: 1px solid #d50000;
+}
+.error-msg-container {
+display: none;
+}
+.invalid .error-msg-container {
+  display: block;
+  color: #d50000;
+  margin-top: 5px;
+  font-size: 16px;
+  text-align: left;
+}
+.invalid input:focus ~ label {
+  color: #d50000;
+}
+.signin-question{
+  color: #5f6368;
+  font-size: 16px;
+}

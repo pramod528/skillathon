@@ -1,0 +1,58 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<app-header></app-header>
+<div class="container">
+<div class="list-events">
+  <div class="table-heading">
+    <h3 class="d-inline pull-left">List Of Events</h3>
+    <input class="width20 pull-right" type="text" placeholder="Search" (input)="onSearchChange($event.target.value)">
+  </div>
+  <table class="table mt-20">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Event Name</th>
+        <th>Type</th>
+        <th>Length (Mins)</th>
+        <th>Views</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let event of pagedItems; let i = index">
+        <td>{{event._id.substr(0, 8)}}</td>
+        <td>
+          <a routerLink="/update-event/{{event._id}}">{{event.name}}</a>
+        </td>
+        <td>{{event.type}}</td>
+        <td>{{event.length}}</td>
+        <td>{{event.views}}</td>
+        <td><a (click)="removeEvent(event._id, i)">Delete</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="table-footer">
+    <div class="pull-left" style="margin-top:17px">
+      <button type="button" class="btn btn-primary" (click)="addEvent()">Add Event</button>
+    </div>
+    <div class="pull-right">
+      <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+        <li [ngClass]="{disabled:pager.currentPage === 1}">
+          <a (click)="setPage(1)">First</a>
+        </li>
+        <li [ngClass]="{disabled:pager.currentPage === 1}">
+          <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+        </li>
+        <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+          <a (click)="setPage(page)">{{page}}</a>
+        </li>
+        <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+          <a (click)="setPage(pager.currentPage + 1)">Next</a>
+        </li>
+        <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+          <a (click)="setPage(pager.totalPages)">Last</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>

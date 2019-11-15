@@ -1,0 +1,27 @@
+a{
+    color: blue;
+}
+.width20{
+    width: 25%
+}
+.list-events{
+    height: auto;
+    margin:10% auto;
+}
+.table-heading{
+    height: 55px;;
+}
+table{
+    border: 1px solid #c9c9c9; 
+}
+table thead tr th,table tbody tr td{
+    padding: 10px;
+    background: transparent;
+    border-right: 1px solid #c9c9c9;
+}
+table tbody tr:hover{
+    background: #c9c9c9
+}
+/deep/ .pagination > .active > a {
+    color: white !important;
+}

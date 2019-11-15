@@ -1,0 +1,34 @@
+<app-header></app-header>
+<div class="update-event-form">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="align-center">Update Event</h3>
+      <form autocomplete="off" [formGroup]="updateEventForm" (ngSubmit)="updateEvent()" class="mt-20">
+        <!-- TODO: Build add form here -->
+        <div class="col-md-12 col-xs-12 user-group" [class.invalid]="submitted && updateEventForm.controls['name'].errors?.required">
+          <input type="text" formControlName="name"  id="name" required>
+          <label for="name">Event Name</label>
+          <div class="error-msg-container">
+            Enter valid event name.
+          </div>
+        </div>
+        <div class="col-md-12 col-xs-12 user-group mt-20" [class.invalid]="submitted && updateEventForm.controls['type'].errors?.required">
+          <input type="text" formControlName="type"  id="type" required>
+          <label for="type">Type</label>
+          <div class="error-msg-container">
+            Enter valid event type.
+          </div>
+        </div>
+        <div class="col-md-12 col-xs-12 user-group mt-20" [class.invalid]="submitted && 
+        (updateEventForm.controls['length'].errors?.required)">
+          <input type="text" formControlName="length" id="length">
+          <label for="length">Length</label>
+          <div class="error-msg-container">
+            <span *ngIf="updateEventForm.controls['length'].errors?.required">Enter valid length.</span>
+          </div>
+        </div>
+        <button type="submit" class="blue-btn mt-20">Update</button>
+    </form>
+  </div>
+  </div>
+</div>

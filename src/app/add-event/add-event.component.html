@@ -1,0 +1,37 @@
+<app-header></app-header>
+<div class="container">
+<div class="add-event-form">
+  <div class="row">
+    <div class="col-md-12">
+        <h3 class="align-center">Add Event</h3>
+        <form autocomplete="off" [formGroup]="eventsForm" (ngSubmit)="addEvent()" class="mt-20">
+          <div class="col-md-12">
+            <div class="col-md-12 col-xs-12 user-group" [class.invalid]="submitted && eventsForm.controls['name'].errors?.required">
+              <input type="text" formControlName="name" id="name" required>
+              <label for="name">Event Name</label>
+              <div class="error-msg-container">
+                Enter valid event name.
+              </div>
+            </div>
+            <div class="col-md-12 col-xs-12 user-group mt-20" [class.invalid]="submitted && eventsForm.controls['type'].errors?.required">
+              <input type="text" formControlName="type" id="type" required>
+              <label for="type">Type</label>
+              <div class="error-msg-container">
+                Enter valid event type.
+              </div>
+            </div>
+            <div class="col-md-12 col-xs-12 user-group mt-20" [class.invalid]="submitted && 
+            (eventsForm.controls['length'].errors?.required)">
+              <input type="text" formControlName="length" id="length">
+              <label for="length">Length</label>
+              <div class="error-msg-container">
+                <span *ngIf="eventsForm.controls['length'].errors?.required">Enter valid length.</span>
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="blue-btn mt-20">Save</button>
+        </form>
+    </div>
+  </div>
+</div>
+</div>
